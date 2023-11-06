@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="inputs">
+    <div class="col-4">
+      <div class="mb-1">Nome:</div>
+      <input type="text" class="form-control" [(ngModel)]="restaurante" />
+    </div>
+    <div class="col-4">
+      <div class="mb-1">Quantidade:</div>
+      <input type="number" class="form-control" [(ngModel)]="qtdeRestaurante" />
+    </div>
+  </div>
+  <div class="d-flex flex-row-reverse">
+    <button class="btn btn-success" (click)="addRestaurante()">
+      {{ restauranteEmEdicao ? "Salvar" : "Adicionar" }}
+    </button>
+  </div>
+</div>

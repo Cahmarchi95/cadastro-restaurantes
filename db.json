@@ -1,0 +1,19 @@
+{
+  "restaurantes": [
+    {
+      "nome": "mcDonalds",
+      "qtdeRestaurante": 2,
+      "id": 7
+    },
+    {
+      "nome": "pizza hut",
+      "qtdeRestaurante": 1,
+      "id": 8
+    },
+    {
+      "nome": "pizza hut",
+      "qtdeRestaurante": 1,
+      "id": 9
+    }
+  ]
+}
