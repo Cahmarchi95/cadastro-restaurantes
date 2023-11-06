@@ -35,9 +35,10 @@ export class CadastroService {
   }
 
   updateRestaurante(
-    restaurante: ICadastroRestaurante
+    restaurante: ICadastroRestaurante,
+    id: number
   ): Observable<ICadastroRestaurante> {
-    const url = `${this.apiUrl}/${restaurante.id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.put<ICadastroRestaurante>(url, restaurante);
   }
 }

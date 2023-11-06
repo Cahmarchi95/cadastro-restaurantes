@@ -1,19 +1,16 @@
 {
   "restaurantes": [
     {
-      "nome": "mcDonalds",
+      "nome": "teste",
+      "qtdeRestaurante": 1,
+      "id": 1,
+      "tipoRestaurante": "Fast-food"
+    },
+    {
+      "nome": "Pizzaria",
       "qtdeRestaurante": 2,
-      "id": 7
-    },
-    {
-      "nome": "pizza hut",
-      "qtdeRestaurante": 1,
-      "id": 8
-    },
-    {
-      "nome": "pizza hut",
-      "qtdeRestaurante": 1,
-      "id": 9
+      "id": 2,
+      "tipoRestaurante": "Italiana"
     }
   ]
 }

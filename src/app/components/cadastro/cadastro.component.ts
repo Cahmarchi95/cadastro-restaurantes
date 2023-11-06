@@ -11,6 +11,11 @@ export class CadastroComponent implements OnInit {
   listaRestaurantes: ICadastroRestaurante[] = [];
   restauranteEmEdicao: ICadastroRestaurante | null = null;
 
+  restauranteId!: number;
+  restaurante: string = '';
+  qtdeRestaurante: number = 0;
+  tipoRestaurante: string = '';
+
   constructor(private cadastroService: CadastroService) {}
 
   ngOnInit() {
@@ -35,13 +40,30 @@ export class CadastroComponent implements OnInit {
   }
 
   editarRestaurante(restaurante: ICadastroRestaurante) {
+    this.restauranteId = restaurante.id;
+    this.restaurante = restaurante.nome;
+    this.qtdeRestaurante = restaurante.qtdeRestaurante;
+    this.tipoRestaurante = restaurante.tipoRestaurante;
     this.restauranteEmEdicao = restaurante;
   }
 
-  salvarEdicaoRestaurante(restauranteEditado: ICadastroRestaurante) {
+  botaoEdicao() {
+    const restauranteEditado: ICadastroRestaurante = {
+      nome: this.restaurante,
+      qtdeRestaurante: this.qtdeRestaurante,
+      id: this.restauranteId,
+      tipoRestaurante: this.tipoRestaurante,
+    };
+    this.salvarEdicaoRestaurante(restauranteEditado, this.restauranteId);
+  }
+
+  salvarEdicaoRestaurante(
+    restauranteEditado: ICadastroRestaurante,
+    id: number
+  ) {
     this.cadastroService
-      .updateRestaurante(restauranteEditado)
-      .subscribe((updatedRestaurante) => {
+      .updateRestaurante(restauranteEditado, id)
+      .subscribe(() => {
         this.getRestaurantes();
         this.restauranteEmEdicao = null;
       });

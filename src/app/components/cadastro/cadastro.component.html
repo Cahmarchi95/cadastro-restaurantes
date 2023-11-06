@@ -2,7 +2,6 @@
   <h3>Cadastro de restaurantes</h3>
   <app-formulario
     (restauranteAdicionado)="restauranteAdicionado()"
-    (salvarEdicaoRestaurante)="salvarEdicaoRestaurante($event)"
   ></app-formulario>
 
   <div class="container mt-3">
@@ -13,6 +12,8 @@
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Quantidade</th>
+          <th scope="col">Tipo</th>
+
           <th scope="col">Ações</th>
         </tr>
       </thead>
@@ -21,11 +22,14 @@
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ restaurante.nome }}</td>
           <td>{{ restaurante.qtdeRestaurante }}</td>
+          <td>{{ restaurante.tipoRestaurante }}</td>
           <td>
             <a
               href="#"
               (click)="editarRestaurante(restaurante)"
               class="text-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
               >Editar</a
             >
             <a href="#" (click)="excluirRestaurante(i)" class="text-danger"
@@ -35,5 +39,53 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Editar restaurante
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <label for="restaurante" class="col-form-label">Restaurante:</label>
+
+        <input type="text" [(ngModel)]="restaurante" />
+
+        <label for="qtdeRestaurante" class="col-form-label">Quantidade:</label>
+        <input type="number" [(ngModel)]="qtdeRestaurante" />
+
+        <label for="tipoRestaurante" class="col-form-label">Tipo:</label>
+        <input type="text" [(ngModel)]="tipoRestaurante" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="botaoEdicao()"
+        >
+          Salvar
+        </button>
+      </div>
+    </div>
   </div>
 </div>

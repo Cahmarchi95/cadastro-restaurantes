@@ -11,6 +11,7 @@ export class FormularioComponent {
   restaurante: string = '';
   qtdeRestaurante: number = 0;
   id!: number;
+  tipoRestaurante!: string;
   restauranteEmEdicao: ICadastroRestaurante | null = null;
 
   @Output() restauranteAdicionado = new EventEmitter<void>();
@@ -28,23 +29,22 @@ export class FormularioComponent {
         id: this.id,
         nome: this.restaurante,
         qtdeRestaurante: this.qtdeRestaurante,
+        tipoRestaurante: this.tipoRestaurante,
       })
       .subscribe(() => {
-        this.restauranteAdicionado.emit(); // Notifica o componente pai sobre a adição
+        this.restauranteAdicionado.emit();
       });
 
     if (this.restauranteEmEdicao) {
-      // Modo de edição - Salvar as alterações no restaurante
-      // Implemente a lógica para salvar a edição no serviço
-      this.salvarEdicaoRestaurante.emit(this.restauranteEmEdicao); // Notificar o componente pai
-      this.restauranteEmEdicao = null; // Sair do modo de edição
+      this.salvarEdicaoRestaurante.emit(this.restauranteEmEdicao);
+      this.restauranteEmEdicao = null;
     } else {
-      // Modo de adição - Adicionar um novo restaurante
       this.cadastroService
         .addRestaurante({
           id: this.id,
           nome: this.restaurante,
           qtdeRestaurante: this.qtdeRestaurante,
+          tipoRestaurante: this.tipoRestaurante,
         })
         .subscribe(() => {
           this.restauranteAdicionado.emit();
@@ -61,6 +61,7 @@ export class FormularioComponent {
   public editarRestaurante(restaurante: ICadastroRestaurante): void {
     this.restaurante = restaurante.nome;
     this.qtdeRestaurante = restaurante.qtdeRestaurante;
+    this.tipoRestaurante = restaurante.tipoRestaurante;
     this.restauranteEmEdicao = restaurante;
   }
 }
