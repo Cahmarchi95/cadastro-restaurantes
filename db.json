@@ -1,16 +1,16 @@
 {
   "restaurantes": [
     {
-      "nome": "teste",
-      "qtdeRestaurante": 1,
+      "nome": "Mc Donalds",
+      "qtdeRestaurante": 4,
       "id": 1,
-      "tipoRestaurante": "Fast-food"
+      "tipoRestaurante": "fastfood"
     },
     {
-      "nome": "Pizzaria",
-      "qtdeRestaurante": 2,
-      "id": 2,
-      "tipoRestaurante": "Italiana"
+      "nome": "Bistrô Oriente",
+      "qtdeRestaurante": 1,
+      "tipoRestaurante": "comida japonesa",
+      "id": 2
     }
   ]
 }

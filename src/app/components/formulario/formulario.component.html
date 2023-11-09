@@ -1,16 +1,36 @@
 <div class="container-fluid">
   <div class="inputs">
     <div class="col-3">
-      <div class="mb-1">Nome:</div>
-      <input type="text" class="form-control" [(ngModel)]="restaurante" />
+      <label for="validationDefault01" class="form-label mb-1">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault01"
+        [(ngModel)]="restaurante"
+        required
+      />
     </div>
     <div class="col-3">
-      <div class="mb-1">Quantidade:</div>
-      <input type="number" class="form-control" [(ngModel)]="qtdeRestaurante" />
+      <label for="validationDefault02" class="form-label mb-1"
+        >Quantidade:</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="validationDefault02"
+        [(ngModel)]="qtdeRestaurante"
+        required
+      />
     </div>
     <div class="col-3">
-      <div class="mb-1">Tipo:</div>
-      <input type="text" class="form-control" [(ngModel)]="tipoRestaurante" />
+      <label for="validationDefault03" class="form-label mb-1">Tipo:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault03"
+        [(ngModel)]="tipoRestaurante"
+        required
+      />
     </div>
   </div>
   <div class="d-flex flex-row-reverse">

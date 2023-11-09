@@ -52,10 +52,12 @@ export class FormularioComponent {
 
       this.restaurante = '';
       this.qtdeRestaurante = 0;
+      this.tipoRestaurante = '';
     }
 
     this.restaurante = '';
     this.qtdeRestaurante = 0;
+    this.tipoRestaurante = '';
   }
 
   public editarRestaurante(restaurante: ICadastroRestaurante): void {

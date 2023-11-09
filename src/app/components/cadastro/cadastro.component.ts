@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/services/cadastro.service';
 import { ICadastroRestaurante } from 'src/app/model/icadastro-restaurante';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +17,10 @@ export class CadastroComponent implements OnInit {
   qtdeRestaurante: number = 0;
   tipoRestaurante: string = '';
 
-  constructor(private cadastroService: CadastroService) {}
+  constructor(
+    private cadastroService: CadastroService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.getRestaurantes();

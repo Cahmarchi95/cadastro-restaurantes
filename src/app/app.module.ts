@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { CadastroService } from './services/cadastro.service';
+import { HistoricoComponent } from './components/historico/historico.component';
 
 @NgModule({
-  declarations: [AppComponent, FormularioComponent, CadastroComponent],
+  declarations: [AppComponent, FormularioComponent, CadastroComponent, HistoricoComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [CadastroService],
   bootstrap: [AppComponent],

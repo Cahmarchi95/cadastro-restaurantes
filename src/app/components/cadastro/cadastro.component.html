@@ -63,28 +63,49 @@
         ></button>
       </div>
       <div class="modal-body">
-        <label for="restaurante" class="col-form-label">Restaurante:</label>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="restaurante" class="col-form-label">Nome:</label>
 
-        <input type="text" [(ngModel)]="restaurante" />
+              <input type="text" [(ngModel)]="restaurante" />
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="qtdeRestaurante" class="col-form-label"
+                >Quantidade:</label
+              >
+              <input type="number" [(ngModel)]="qtdeRestaurante" />
+              <div class="col-md-4 ml-auto">
+                <label for="tipoRestaurante" class="col-form-label"
+                  >Tipo:</label
+                >
+                <input type="text" [(ngModel)]="tipoRestaurante" />
+              </div>
+            </div>
+          </div>
 
-        <label for="qtdeRestaurante" class="col-form-label">Quantidade:</label>
-        <input type="number" [(ngModel)]="qtdeRestaurante" />
-
-        <label for="tipoRestaurante" class="col-form-label">Tipo:</label>
-        <input type="text" [(ngModel)]="tipoRestaurante" />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-dismiss="modal"
-          (click)="botaoEdicao()"
-        >
-          Salvar
-        </button>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="botaoEdicao()"
+            >
+              Salvar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
