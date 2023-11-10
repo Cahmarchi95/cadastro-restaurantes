@@ -22,10 +22,4 @@ export class HistoricoComponent {
     this.HistoricoService.limpar();
     this.historico = this.HistoricoService.historico;
   }
-
-  redirecionar(rota: string) {
-    if (rota === 'anterior') {
-      this.location.back();
-    }
-  }
 }

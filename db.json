@@ -2,15 +2,15 @@
   "restaurantes": [
     {
       "nome": "Mc Donalds",
-      "qtdeRestaurante": 4,
+      "qtdeRestaurante": 3,
       "id": 1,
       "tipoRestaurante": "fastfood"
     },
     {
       "nome": "Bistrô Oriente",
       "qtdeRestaurante": 1,
-      "tipoRestaurante": "comida japonesa",
-      "id": 2
+      "id": 2,
+      "tipoRestaurante": "comida japonesa"
     }
   ]
 }

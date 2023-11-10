@@ -1,15 +1,11 @@
 <div class="container mt-5">
   <h3>
     Histórico
-    <button class="btn btn-danger btn-sm ms-2" (click)="limpar()">
-      Limpar histórico
-    </button>
-    <button
-      class="btn btn-secondary btn-sm ms-2"
-      (click)="redirecionar('anterior')"
-    >
-      Voltar
-    </button>
+    <div class="d-flex flex-row-reverse">
+      <button class="btn btn-danger btn-sm ms-2" (click)="limpar()">
+        Limpar histórico
+      </button>
+    </div>
   </h3>
   <table class="table text-center">
     <thead>
